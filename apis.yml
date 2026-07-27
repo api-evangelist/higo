@@ -1,4 +1,16 @@
 aid: higo
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/higo.png
 name: Higo
 description: 'Higo is a company surfaced as a portfolio company of accel and added to the API Evangelist
   network as a stub for enrichment. Sector: payments. This profile is a lead awaiting the enrichment pipeline.'
@@ -9,9 +21,14 @@ x-backed-by:
 - accel
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-enrichment-note: 'Enrichment 2026-07-19: no reachable public developer surface. higo.io
+  fails TLS to standard clients; higo.mx returns 404; developer.higo.io and docs.higo.io
+  return "Service not found"; api.higo.io serves only an internal Rails admin login. No
+  OpenAPI, docs, SDKs (no first-party npm/PyPI package), MCP, or /.well-known/* documents
+  found. Only real artifact captured is probed DNS/TLS domain security. Appears wound-down/dormant.'
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Payments
@@ -22,5 +39,12 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/higo-domain-security.yml
 - type: Website
   url: https://higo.io/
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
